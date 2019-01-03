@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BrotShop.Models;
+﻿using BrotShop.Models;
+using BrotShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace BrotShop.Controllers
 {
@@ -18,7 +16,13 @@ namespace BrotShop.Controllers
 
         public IActionResult Index()
         {
-            return View(_goodieRepository.GetAllGoodies());
+            var viewModel = new HomeViewModel
+            {
+                Title = "Brots goodies",
+                Goodies = _goodieRepository.GetAllGoodies().OrderBy(g => g.Name).ToList()
+            };
+
+            return View(viewModel);
         }
     }
 }

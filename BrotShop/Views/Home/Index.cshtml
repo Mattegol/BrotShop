@@ -1,0 +1,16 @@
+﻿@model BrotShop.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+
+@foreach (var goodie in Model.Goodies)
+{
+    <div>
+        <h2>@goodie.Name</h2>
+        <h3>@goodie.Price.ToString("c")</h3>
+    </div>
+}
+
