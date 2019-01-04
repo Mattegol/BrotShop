@@ -24,5 +24,15 @@ namespace BrotShop.Controllers
 
             return View(viewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var goodie = _goodieRepository.GetGoodieById(id);
+
+            if (goodie == null) return NotFound();
+
+            return View(goodie);
+
+        }
     }
 }

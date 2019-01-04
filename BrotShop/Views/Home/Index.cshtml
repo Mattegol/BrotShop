@@ -1,4 +1,4 @@
-﻿@model BrotShop.ViewModels.HomeViewModel
+﻿@model HomeViewModel
 
 @{
     ViewData["Title"] = Model.Title;
@@ -14,7 +14,7 @@
             <div class="caption">
                 <h3 class="pull-right">@goodie.Price.ToString("c")</h3>
                 <h3>
-                    @goodie.Name
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@goodie.Id">@goodie.Name</a>
                 </h3>
                 <p>@goodie.ShortDescription</p>
             </div>

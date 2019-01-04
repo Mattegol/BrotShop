@@ -34,7 +34,13 @@ namespace BrotShop
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "Default",
+                    template: "{Controller=Home}/{Action=Index}/{id?}"
+                );
+            });
         }
     }
 }
