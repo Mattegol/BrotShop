@@ -18,7 +18,7 @@ namespace BrotShop.Controllers
         {
             var viewModel = new HomeViewModel
             {
-                Title = "Brots goodies",
+                Title = "Brot's goodies",
                 Goodies = _goodieRepository.GetAllGoodies().OrderBy(g => g.Name).ToList()
             };
 

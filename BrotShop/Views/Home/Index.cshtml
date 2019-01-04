@@ -8,9 +8,17 @@
 
 @foreach (var goodie in Model.Goodies)
 {
-    <div>
-        <h2>@goodie.Name</h2>
-        <h3>@goodie.Price.ToString("c")</h3>
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="@goodie.ImageThumbnailUrl" alt="">
+            <div class="caption">
+                <h3 class="pull-right">@goodie.Price.ToString("c")</h3>
+                <h3>
+                    @goodie.Name
+                </h3>
+                <p>@goodie.ShortDescription</p>
+            </div>
+        </div>
     </div>
 }
 
