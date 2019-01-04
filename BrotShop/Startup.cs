@@ -24,6 +24,7 @@ namespace BrotShop
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IGoodieRepository, GoodieRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
 
             services.AddMvc();
         }

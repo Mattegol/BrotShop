@@ -11,6 +11,8 @@ namespace BrotShop.Models
 
         public DbSet<Goodie> Goodies { get; set; }
 
+        public DbSet<Feedback> Feedbacks { get; set; }
+
 
     }
 }
