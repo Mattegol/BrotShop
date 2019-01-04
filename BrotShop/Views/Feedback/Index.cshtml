@@ -5,41 +5,47 @@
 
 }
 
-<form asp-action="Index" method="post" class="form-horizontal" role="form">
+<section class="container g-py-100">
+    <div class="text-center g-mb-50">
+        <h2 class="h1 g-color-black g-font-weight-600">We love to hear your feedback</h2>
+        <p class="lead">
+            Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor.
+            Vivamus a fringilla lorem, vel faucibus ante. Nunc ullamcorper,
+            justo a iaculis elementum, enim orci viverra eros, fringilla porttitor lorem eros vel.
+        </p>
+    </div>
 
-    <div asp-validation-summary="All" class="text-danger"></div>
 
-    <div class="form-group">
-        <label asp-for="Name" class="col-md-2 control-label"></label>
-        <div class="col-md-5">
-            <input asp-for="Name" class="form-control"/>
+
+    <form asp-action="Index" method="post" class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" role="form">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group g-mb-20">
+            <label asp-for="Name" class="g-mb-10"></label>
+            <input asp-for="Name" class="form-control form-control-md rounded-0" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email" class="col-md-2 control-label"></label>
-        <div class="col-md-5">
-            <input asp-for="Email" class="form-control"/>
+        <div class="form-group g-mb-20">
+            <label asp-for="Email" class="g-mb-10"></label>
+            <input asp-for="Email" class="form-control form-control-md rounded-0" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="Message" class="col-md-2 control-label"></label>
-        <div class="col-md-5">
-            <textarea asp-for="Message" class="form-control"></textarea>
+        <div class="form-group g-mb-20">
+            <label asp-for="Message" class="g-mb-20"></label>
+            <textarea asp-for="Message" class="form-control form-control-md g-resize-none rounded-0" rows="3"></textarea>
             <span asp-validation-for="Message" class="text-danger"></span>
         </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="ContactMe" class="col-md-2 control-label"></label>
-        <div class="col-md-5">
-            <input type="checkbox" asp-for="ContactMe" class="form-control"/>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-5">
-            <input type="submit" class="btn btn-primary" value="Send feedback"/>
-        </div>
-    </div>
 
-</form>
+        <div class="form-check">
+            <label class="form-check-label g-mb-20">
+                <input class="form-check-input mr-1" type="checkbox" asp-for="ContactMe"> Contact Me
+            </label>
+        </div>
+
+        <button class="btn btn-md u-btn-primary rounded-0" type="submit">Send feedback</button>
+
+
+    </form>
+
+</section>

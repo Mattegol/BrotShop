@@ -1,0 +1,71 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+
+
+
+
+<section class="container g-py-100">
+    <div class="text-center g-mb-50">
+        <h2 class="h1 g-color-black g-font-weight-600">@Model.Title</h2>
+        <p class="lead">
+            Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in. Donec in blandit dolor.
+            Vivamus a fringilla lorem, vel faucibus ante. Nunc ullamcorper,
+            justo a iaculis elementum, enim orci viverra eros, fringilla porttitor lorem eros vel.
+        </p>
+    </div>
+
+    <!-- Products Block -->
+    <div class="row">
+
+        @foreach (var goodie in Model.Goodies)
+        {
+
+            <div class="col-md-6 col-lg-4 g-mb-30">
+                <!-- Article -->
+                <article class="text-center g-bg-white">
+                    <!-- Article Image -->
+                    <div class="g-pos-rel">
+                        <img class="w-100" alt="Image Description" src="@goodie.ImageThumbnailUrl">
+
+                        <div class="u-ribbon-v1 g-width-55 g-bg-primary g-font-weight-600 g-font-size-17 g-top-10 g-right-10 rounded p-0">
+                            <span class="d-block g-color-white g-py-15">@goodie.Price.ToString("c")</span>
+                            <span class="d-block g-bg-white g-color-primary g-line-height-0_8 g-rounded-bottom-3 g-py-15">
+                                30%
+
+                                <small class="g-font-size-12">save</small>
+
+                            </span>
+                        </div>
+                    </div>
+                    <!-- End Article Image -->
+                    <!-- Article Content -->
+                    <div class="u-shadow-v19 g-pa-30">
+                        <header class="g-mb-15">
+                            <div class="js-rating d-inline-block g-color-primary g-font-size-11 g-mr-10" data-rating="5"></div>
+                            <span class="d-inline-block g-color-gray-dark-v5 g-font-weight-600 g-font-size-10 text-uppercase">12 Reviews</span>
+                        </header>
+
+                        <!-- Article Info -->
+                        <h3 class="h4 g-mb-10">
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@goodie.Id" class="g-color-main g-color-primary--hover g-text-underline--none--hover">@goodie.Name</a>
+                        </h3>
+                        <p>@goodie.ShortDescription</p>
+                        <!-- End Article Info -->
+                    </div>
+                    <!-- End Article Content -->
+                </article>
+                <!-- End Article -->
+            </div>
+
+        }
+
+
+    </div>
+    <!-- End Products Block -->
+
+
+</section>

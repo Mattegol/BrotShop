@@ -1,24 +1,32 @@
-﻿@model HomeViewModel
-
-@{
-    ViewData["Title"] = Model.Title;
-}
-
-<h2>@Model.Title</h2>
-
-@foreach (var goodie in Model.Goodies)
-{
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <img src="@goodie.ImageThumbnailUrl" alt="">
-            <div class="caption">
-                <h3 class="pull-right">@goodie.Price.ToString("c")</h3>
-                <h3>
-                    <a asp-controller="Home" asp-action="Details" asp-route-id="@goodie.Id">@goodie.Name</a>
-                </h3>
-                <p>@goodie.ShortDescription</p>
+﻿ <!-- Promo Block -->
+<section class="g-pos-rel g-overflow-hidden">
+    <!-- Promo Block - Carousel -->
+    <div class="js-carousel" data-autoplay="true" data-infinite="true" data-fade="true" data-speed="5000">
+        <div class="js-slide g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_3--after" style="background-image: url(/images/img1.jpg);" data-calc-target="#js-header"></div>
+        <div class="js-slide g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-bluegray-opacity-0_3--after" style="background-image: url(/images/img4.jpg);" data-calc-target="#js-header"></div>
+    </div>
+    <!-- End Promo Block - Carousel -->
+    <!-- Promo Block Content -->
+    <div class="g-absolute-centered--y g-left-0 g-right-0 mx-5">
+        <div class="text-center mx-auto g-max-width-750 g-pos-rel">
+            @*<div class="g-hidden-xs-down g-pos-abs g-top-minus-0 g-left-0">
+                    <img class="img-fluid g-width-120" src="../../../assets/img-temp/300x235/img1.png" alt="Image Description">
+                </div>
+                <div class="g-hidden-xs-down g-pos-abs g-top-minus-0 g-right-0">
+                    <img class="img-fluid g-width-120" src="../../../assets/img-temp/300x235/img1.png" alt="Image Description">
+                </div>*@
+            <div class="g-brd-around g-brd-10 g-brd-white-opacity-0_8 g-bg-white-opacity-0_7">
+                <div class="g-brd-around g-brd-white-opacity-0_4 g-pa-30 g-pa-60--md">
+                    <span class="d-block text-uppercase mb-2 g-color-black g-font-size-13 g-letter-spacing-2">Your favourite</span>
+                    <h2 class="g-color-black g-font-weight-600 g-font-size-25 g-font-size-40--md mb-4">Desserts Shop</h2>
+                    <p class="lead g-color-black mb-5">Brot works hard with passion and love to give you the best tasting goodies in the world!</p>
+                    <img class="img-fluid g-width-50" src="/images/heart.png" alt="Image Description">
+                </div>
             </div>
         </div>
     </div>
-}
+    <!-- End Promo Block Content -->
 
+
+</section>
+<!-- End Promo Block -->

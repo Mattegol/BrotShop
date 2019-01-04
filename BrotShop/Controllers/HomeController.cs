@@ -16,6 +16,11 @@ namespace BrotShop.Controllers
 
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Goodies()
+        {
             var viewModel = new HomeViewModel
             {
                 Title = "Brot's goodies",
@@ -34,5 +39,6 @@ namespace BrotShop.Controllers
             return View(goodie);
 
         }
+
     }
 }
