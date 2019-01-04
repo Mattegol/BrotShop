@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BrotShop.Models
+﻿namespace BrotShop.Models
 {
     public class Goodie
     {
@@ -22,6 +17,9 @@ namespace BrotShop.Models
         public string ImageThumbnailUrl { get; set; }
 
         public bool IsGoodieOfTheWeek { get; set; }
+
+        public bool IsInStock { get; set; }
+
 
 
     }
